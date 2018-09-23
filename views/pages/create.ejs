@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<% include ../partials/head %>
+	<title></title>
+</head>
+<body class="container">
+        <header>
+                <% include ../partials/header %>
+        </header>
+
+
+<main>
+		<div class="row">
+			<div class="col-sm-8">
+                <div class="jumbotron">
+                        <h2>Item You Added to Your Wishlist</h2> <br><br>
+
+                        <ul>
+                                <!-- <a href="/create_wishlist">Wishlist</a> -->
+                        </ul>
+
+                        <div>
+                              <h4>Item name:</h4><h3> <%= item_name %> </h3> <br>
+                              <h4> Item category:</h4><h3> <%= item_category %> </h3> <br>
+                                <h4>Picture: </h4><h3> <%= item_url %> </h3> <br>
+                                <h4> Price:</h4><h3> <%= price %> </h3>
+                        </div>
+                </div>
+ 
+
+            </div>
+			<div class="col-sm-4">
+				
+				<div class="well">
+                        <form method="POST" action="/create_wishlist">
+                            <ul><input type="text" size="38" name="item_name" placeholder="Add your item"></ul>
+                            <!-- <ul><input type="text" size="38" name="item_category" placeholder="Search categories"></ul>  -->
+                            <ul> <select name="item_category" width="38" type="text" >
+                                        <option value="Technology">Technology</option>
+                                        <option value="Hardware">Hardware</option>
+                                        <option value="Outdoors">Outdoors</option>
+                                        <option value="Homegoods">Homegoods</option>
+                                        <option value="Sports">Sports </option>
+                                        <option value="Clothes">Clothes</option>
+                                        <option value="Other">Other</option>
+                                    </select></ul>
+                            <ul><input type="text" size="38" name="picture_url" placeholder="picture_url"></ul>
+                            <ul><input type="text" size="38" name="item_url" placeholder="item"></ul>
+                            <ul><input type="text" size="38" name="price" placeholder="price"></ul>
+                            <!-- Line 21: "name" is from the Categories table  -->
+    
+                            <center><button type="submit" class="btn btn-info">submit</button> </center>
+                        </form>
+                                <br>
+                                <center>
+                                <button type="submit" class="btn btn-info"><a href="/user_wishlist"> View Your Wishlist </a> </button>
+                               
+					
+				</div>
+
+			</div>
+		</div>
+	</main>
+
+
+
+<footer>
+		<% include ../partials/footer %>
+	</footer>
+
+</body>
+</html>

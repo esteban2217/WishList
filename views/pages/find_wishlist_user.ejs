@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../partials/head %>
+</head>
+<body class="container">
+
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<main>
+		<div class="row">
+			<div class="col-sm-8">
+			
+
+
+
+
+					<div class="jumbotron">
+
+						<center>
+
+							<p><h2>Welcome to <%= user %>'s Wishlist</h1></p>
+							
+						</center>
+
+					</div>
+	
+					<div id="wishlistitems" class="jumbotron">
+	
+							<% for(var i=0; i<list.length; i++) { %>
+									<center>
+							<div class="user_wishlist">
+								<td>
+								<tr>
+										
+										<a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=<%=list[i].item_name.split(' ').join('+')%>" target="_blank"><button class="btn btn-success" data-id="<%=list[i]%>" >PURCHASE</button></a>
+										
+								</tr> 
+								</td>
+								<br>
+								<br>
+								<td>
+								  <tr><%= JSON.stringify(list[i].item_name) %></tr>
+								</td>
+								
+								<td>
+								  <tr><%= JSON.stringify(list[i].item_category) %></tr>
+								</td>
+	
+								<td>
+								<tr><%= JSON.stringify(list[i].item_url) %></tr>
+								</td>
+	
+								<td>
+								<tr><%= JSON.stringify(list[i].price) %></tr>
+								</td>
+							</div>
+								<br>
+							
+							</center>
+	
+							 <% } %>
+	
+							
+					
+	
+					</div>
+
+
+
+
+
+			</div>
+					<div class="col-sm-4">
+						
+
+					<form action="/find_wishlist_user" method="POST">
+
+						<div class="well">
+							<h3>Search For a WishList </h3>
+							<br>
+							<center>
+							<form>
+								<input type="email" class="form-control" placeholder="Email Address" name="email" > 
+								<br>
+								
+								<button type="submit" class="btn btn-info">Find WishList</button>
+							</form>
+						</center>
+						</div>
+
+					</form>
+
+					</div>
+		</div>
+	</main>
+
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+	
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../partials/head %>
+</head>
+<body class="container">
+
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<main>
+		<div class="row">
+			<div class="col-sm-8">
+			
+
+
+
+
+					<div class="jumbotron">
+
+							<p><h2>Welcome to <%= user %>'s Wishlist</h1></p>
+							
+
+					</div>
+	
+					<div id="wishlistitems" class="jumbotron">
+	
+							<% for(var i=0; i< list.length; i++) { %>
+								<td>
+								  <tr><%= JSON.stringify(list[i].item_name) %></tr>
+								</td>
+								
+								<td>
+								  <tr><%= JSON.stringify(list[i].item_category) %></tr>
+								</td>
+	
+								<td>
+								<tr><%= JSON.stringify(list[i].item_url) %></tr>
+								</td>
+	
+								<td>
+								<tr><%= JSON.stringify(list[i].price) %></tr>
+								</td>
+								<br><br>
+	
+							 <% } %>
+	
+							
+					
+	
+					</div>
+
+
+
+
+
+			</div>
+					<div class="col-sm-4">
+						
+
+					<form action="/find_wishlist_user" method="POST">
+
+						<div class="well">
+							<h3>Search For a WishList </h3>
+							<br>
+							<form>
+								<input type="email" class="form-control" placeholder="Email Address" name="email" > 
+								<br>
+								<br>
+								<button type="submit" class="btn btn-outline-success">Find WishList</button>
+							</form>
+
+						</div>
+
+					</form>
+
+					</div>
+		</div>
+	</main>
+
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../partials/head %>
+</head>
+<body class="container">
+
+	<header>
+		<% include ../partials/header %>
+	</header>
+<center>
+	<main>
+		<div class="row">
+			<div class="col-sm-12">
+			
+				<div class="jumbotron">
+
+						<p><h2>Welcome to <%= user %>'s Wishlist</h1></p>
+						
+
+                    <!-- <h1>About</h1>
+                    <p><strong>WishList</strong> is an online register for all your needs!!!</p>
+                    <p>Create, Save, Modify and Share your personal WishList.</p>
+					<p>We're here to help you make those hard, painful, excruciating decision easy.</p> -->
+				</div>
+
+				<div id="wishlistitems" class="jumbotron">
+
+						<% for(var i=0; i< list.length; i++) { %>
+							<td>
+							  <tr><%= JSON.stringify(list[i].item_name) %></tr>
+							</td>
+							
+							<td>
+							  <tr><%= JSON.stringify(list[i].item_category) %></tr>
+							</td>
+
+							<td>
+							<tr><%= JSON.stringify(list[i].item_url) %></tr>
+							</td>
+
+							<td>
+							<tr><%= JSON.stringify(list[i].price) %></tr>
+							</td>
+							<br><br>
+
+                         <% } %>
+
+						
+				
+
+				</div>
+				
+			
+	</main>
+</center>
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+	
+</body>
+</html>

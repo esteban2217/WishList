@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../partials/head %>
+</head>
+<body class="container">
+
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<main>
+		<div class="row">
+			<div class="col-sm-8">
+			
+				<div class="jumbotron">
+					<h1>Find a Wishlist</h1>
+
+				
+				
+				</div>
+				
+			</div>
+			<div class="col-sm-4">
+				
+
+			<form action="/find_wishlist_user" method="POST">
+
+				<div class="well">
+					<h3>Search For a WishList </h3>
+					<br>
+					<form>
+						<input type="email" class="form-control" placeholder="Email Address" name="email" > 
+						<br>
+						<center>
+						<button type="submit" class="btn btn-info">Find WishList</button>
+					</center>
+					</form>
+
+				</div>
+
+			</form>
+
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+	
+</body>
+</html>

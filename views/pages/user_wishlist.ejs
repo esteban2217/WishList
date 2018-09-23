@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../partials/head %>
+</head>
+<body class="container">
+
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<main>
+		<div class="row">
+			<div class="col-sm-8">
+			<center>
+				<div class="jumbotron">
+                    <h2><%= user %>'s Wishlist</h2>  
+                    <br>
+                    <button type="submit" class="btn btn-info">
+                            <a href="/create_wishlist" style="color: #0c0c0c">Add a new item</a>
+                    </button>
+            
+					
+				</div>
+            </center>  
+
+                <div id="wishlistitems" class="jumbotron">
+	
+                    <% for(var i=0; i<list.length; i++) { %>
+                            <center>
+                        <div class="user_wishlist">
+                        <td>
+                        <tr>
+                                <form method="POST" action="/remove/<%= list[i].wishlist_id %>">
+                                    <button type="submit" class="btn btn-danger"> REMOVE </button>
+                                </form>
+                        </tr> 
+                        </td>
+                        <br>
+                        
+                        <td>
+                          <tr><%= JSON.stringify(list[i].item_name) %></tr>
+                        </td>
+                        
+                        <td>
+                          <tr><%= JSON.stringify(list[i].item_category) %></tr>
+                        </td>
+
+                        <td>
+                        <tr><%= JSON.stringify(list[i].item_url) %></tr>
+                        </td>
+
+                        <td>
+                        <tr><%= JSON.stringify(list[i].price) %></tr>
+                        </td>
+                    </div>
+
+                        <br>
+
+                    </center>
+
+                     <% } %>
+
+                    
+            
+
+            </div>   
+
+
+
+
+			</div>
+			<div class="col-sm-4">
+				
+				<div class="well">
+					<h3>Hi..<%= user %></h3>
+				</div>  
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+	
+</body>
+</html>

@@ -23,18 +23,21 @@ app.set('view engine', 'ejs');
 
 // use res.render to load up an ejs view file
 
+// mysql://bdfb97e8993ef9:c9eec385@us-cdbr-iron-east-01.cleardb.net/heroku_f99b8191736f089?reconnect=true
+
 var connection = mysql.createConnection({
-	host: "localhost",
+
+	host: "us-cdbr-iron-east-01.cleardb.net",
   
 	// Your port; if not 3306
 	port: 3306,
   
 	// Your username
-	user: "root",
+	user: "bdfb97e8993ef9",
   
 	// Your password
-	password: "gleb123",
-	database: "wishlist_db"
+	password: "c9eec385",
+	database: "heroku_f99b8191736f089"
   });
 
 
